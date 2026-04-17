@@ -64,18 +64,23 @@ This project is inspired by a Data DNA challenge but independently rebuilt and e
 ## Project Structure
 
 ```
-maritime-logistics-dashboard/
+maritime-logistics-analytics-dashboard/
 │
 ├── data/
-│   └── dataset.csv
+│   ├── raw/
+│   └── processed/
 │
 ├── dashboard/
-│   └── maritime_dashboard.pbix
+│   └── Maritime.pbix
 │
 ├── images/
-│   └── dashboard_preview.png
+│   └── dashboard-preview.png
+│
+├── docs/
+│   └── project-report.md
 │
 ├── README.md
+├── requirements.txt (optional)
 ```
 
 ---
