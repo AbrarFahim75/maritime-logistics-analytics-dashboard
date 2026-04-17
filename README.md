@@ -1,63 +1,55 @@
-# Maritime Logistics Performance Dashboard (Power BI + Analytics)
+# Maritime Logistics Analytics Dashboard
+
+A Power BI project analyzing maritime terminal performance, cargo movement efficiency, and operational bottlenecks.
+
+---
 
 ## Project Overview
-This project analyzes maritime logistics and port performance using an interactive Power BI dashboard.  
-The goal is to identify inefficiencies, delays, and operational bottlenecks in global shipping operations.
 
-This project is inspired by a Data DNA challenge but independently rebuilt and enhanced with additional KPIs and analysis.
+This project focuses on evaluating terminal operations using data-driven insights. It provides visibility into cargo movement performance and supports decision-making in logistics and supply chain environments.
 
 ---
 
-## Objectives
-- Analyze port efficiency and turnaround time  
-- Identify shipment delays and bottlenecks  
-- Provide actionable insights for logistics optimization  
-- Demonstrate business-oriented data storytelling  
+## Key Features
+
+- KPI tracking: Total Movements, On Target %, At Risk %, Bottleneck %, Avg Duration, Unique Vessels  
+- Terminal-level performance analysis  
+- Vessel category comparison  
+- Monthly trend analysis for bottlenecks  
+- Interactive filtering by vessel category, performance band, and regional hub  
 
 ---
 
-## Tech Stack
-- Power BI (Dashboard & Visualization)
-- Power Query (Data Cleaning & Transformation)
-- DAX (KPI Calculations)
-- Optional: Python (Machine Learning extension)
+## Data Model
+
+The dashboard is built using a star schema:
+
+- fact_cargo_movements  
+- dim_terminal  
+- dim_vessel  
+- dim_time  
 
 ---
 
-## Dashboard Features
-- Shipment trends over time  
-- Port-wise performance comparison  
-- Average turnaround time analysis  
-- Delay distribution and patterns  
-- Region-based filtering  
+## Tools & Technologies
 
----
-
-## Key KPIs
-- Total Shipments  
-- Average Turnaround Time  
-- Delay Percentage  
-- Port Efficiency Score (custom metric)  
-
----
-
-## Key Insights
-- Certain ports consistently show higher delays, indicating potential bottlenecks  
-- Seasonal patterns affect shipment efficiency  
-- High-volume ports are not always the most efficient  
-
----
-
-## Enhancements (Beyond Original Video)
-- Added Delay Ratio KPI  
-- Designed Executive Summary Page  
-- Improved dashboard layout and user experience  
-- Created Port Efficiency Score using DAX  
+- Power BI  
+- DAX  
+- Data Modeling  
 
 ---
 
 ## Dashboard Preview
-![Dashboard Preview](images/dashboard_preview.png)
+
+![Dashboard Preview](images/dashboard-preview.png)
+
+---
+
+## Key Insights
+
+- Bottleneck movements represent a significant portion of operations  
+- Performance varies across terminals and vessel categories  
+- Data highlights areas for process improvement and optimization  
 
 ---
 
@@ -93,15 +85,6 @@ Delay Ratio = DIVIDE([Delayed Shipments], [Total Shipments])
 Port Efficiency Score = 
 1 - DIVIDE([Avg Delay Time], [Max Delay Time])
 ```
-
----
-
-## Future Improvements (AI/ML Extension)
-
-- Predict shipment delays using machine learning  
-- Cluster ports based on performance  
-- Implement anomaly detection for unusual delays  
-- Deploy dashboard and model as a web application  
 
 ---
 
