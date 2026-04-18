@@ -6,17 +6,17 @@ A Power BI project analyzing maritime terminal performance, cargo movement effic
 
 ## Project Overview
 
-This project focuses on evaluating terminal operations using data-driven insights. It provides visibility into cargo movement performance and supports decision-making in logistics and supply chain environments.
+This project analyzes maritime terminal operations to evaluate cargo movement efficiency, identify bottlenecks, and support data-driven decision-making in logistics environments.
+The dataset includes ~15,000 cargo movements across multiple terminals and vessel categories from 2021 to 2024.
 
 ---
 
-## Key Features
+## Highlights
 
-- KPI tracking: Total Movements, On Target %, At Risk %, Bottleneck %, Avg Duration, Unique Vessels  
-- Terminal-level performance analysis  
-- Vessel category comparison  
-- Monthly trend analysis for bottlenecks  
-- Interactive filtering by vessel category, performance band, and regional hub  
+- Built an end-to-end Power BI dashboard using a star schema data model  
+- Developed DAX measures for KPI tracking and performance classification  
+- Designed an executive-level dashboard for logistics performance monitoring  
+- Implemented interactive filtering for multi-dimensional analysis  
 
 ---
 
@@ -63,19 +63,24 @@ The dashboard is built using a star schema:
 maritime-logistics-analytics-dashboard/
 │
 ├── data/
-│   ├── raw/
-│   └── processed/
+│   ├── dim_terminal.csv
+│   ├── dim_time.csv
+│   ├── dim_vessel.csv
+│   └── fact_cargo_movements.csv
 │
 ├── dashboard/
-│   └── Maritime.pbix
+│   └── maritime-terminal-intelligence-dashboard.pbix
 │
 ├── images/
-│   └── dashboard-preview.png
+│   ├── dashboard-preview.png
+│   └── kpi-performance-analysis.png
 │
 ├── docs/
-│   └── project-report.md
+│   ├── project-report.md
+│   ├── DATA_DICTIONARY.md
+│   └── business-context.md
 │
-├── README.md
+└── README.md
 ```
 
 ---
@@ -83,10 +88,14 @@ maritime-logistics-analytics-dashboard/
 ## Example DAX Calculations
 
 ```DAX
-Delay Ratio = DIVIDE([Delayed Shipments], [Total Shipments])
+At Risk Count = 
+CALCULATE(
+    COUNTROWS(fact_cargo_movements),
+    fact_cargo_movements[Performance Band] = "At Risk"
+)
 
-Port Efficiency Score = 
-1 - DIVIDE([Avg Delay Time], [Max Delay Time])
+Bottleneck % = 
+DIVIDE([Bottleneck Count], [Total Movements])
 ```
 
 ---
@@ -99,7 +108,7 @@ Port Efficiency Score =
 
 ---
 
-## How to Use
+## Getting Started
 
 1. Download the `.pbix` file  
 2. Open it in Power BI Desktop  
