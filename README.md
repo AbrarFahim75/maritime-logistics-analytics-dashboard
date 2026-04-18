@@ -53,6 +53,10 @@ The dashboard is built using a star schema:
 
 ---
 
+### KPI & Terminal Performance View
+
+![KPI Analysis](images/kpi-performance-analysis.png)
+
 ## Project Structure
 
 ```
