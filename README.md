@@ -76,7 +76,6 @@ maritime-logistics-analytics-dashboard/
 │   └── project-report.md
 │
 ├── README.md
-├── requirements.txt (optional)
 ```
 
 ---
